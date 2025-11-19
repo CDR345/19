@@ -1,11 +1,14 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Vehicle {
 
     private int maxSpeed =200;
     private int currentSpeed;
     private String make;
     private String model;
+    private ArrayList<Owner> owners = new ArrayList<>();
 
 
     public Vehicle(int currentSpeed, String make, String model) {
@@ -30,6 +33,21 @@ public class Vehicle {
 
     }
 
+    public Vehicle(int maxSpeed, int currentSpeed, String make, String model) {
+        this.maxSpeed = maxSpeed;
+        this.currentSpeed = currentSpeed;
+        this.make = make;
+        this.model = model;
+    }
+
+    public Vehicle(int maxSpeed, int currentSpeed, String make, String model, ArrayList<Owner> owners) {
+        this.maxSpeed = maxSpeed;
+        this.currentSpeed = currentSpeed;
+        this.make = make;
+        this.model = model;
+        this.owners = owners;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Vehicle{");
@@ -37,8 +55,21 @@ public class Vehicle {
         sb.append(", currentSpeed=").append(currentSpeed);
         sb.append(", make='").append(make).append('\'');
         sb.append(", model='").append(model).append('\'');
+        sb.append(", owners=").append(owners);
         sb.append('}');
         return sb.toString();
+    }
+
+    public void setCurrentSpeed(int currentSpeed) {
+        this.currentSpeed = currentSpeed;
+    }
+
+    public ArrayList<Owner> getOwners() {
+        return owners;
+    }
+
+    public void setOwners(ArrayList<Owner> owners) {
+        this.owners = owners;
     }
 
     public int getMaxSpeed() {
