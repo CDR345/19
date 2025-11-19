@@ -30,6 +30,17 @@ public class Vehicle {
 
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Vehicle{");
+        sb.append("maxSpeed=").append(maxSpeed);
+        sb.append(", currentSpeed=").append(currentSpeed);
+        sb.append(", make='").append(make).append('\'');
+        sb.append(", model='").append(model).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
     public int getMaxSpeed() {
         return maxSpeed;
     }
